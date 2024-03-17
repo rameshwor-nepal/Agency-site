@@ -1,0 +1,49 @@
+:root{
+    --bg : #011D2E;
+    --bgSoft : #2d2b42;
+    --text: white;
+    --textSoft: #e5e5e5;
+    --textBlue : #3673fd;
+    --btn: #3673fd;
+    --btnHover : #4573d6;
+}
+ * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+ }
+body{
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container{
+    background-color: var(--bg);
+    margin: auto;
+    padding:  0px 50px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button{
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: var(--btn);
+    color: var(--text);
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: var(--btnHover);
+    transition: all ease-in-out;
+}
