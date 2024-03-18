@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerLeft{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-left: 50px;
+}
+
+.heroTitle{
+    font-size: 48px;
+}
+
+.heroContent{
+    width: 40rem;
+    font-size: 20px;
+}
+
+.heroButton{
+    display: flex;
+    gap: 20px;
+}
+.heroBrands{
+    filter: grayscale(1);
+}
+.containerRight{
+    flex: 1;
+}
+
+@media (max-width : 768px){
+    .container{
+        flex-direction: column;
+        gap: 50px;
+    }
+}
+

@@ -50,9 +50,9 @@ const Navbar = () => {
           </ul>
           <div className={styles.linkContainer}>
             {isSession ? (
-              <button>Log Out</button>
+              <button className='btnPrimary'>Log Out</button>
             ) : (
-              <button>Log In</button>
+              <button className='btnPrimary'>Log In</button>
             )}
 
           </div>
@@ -67,9 +67,9 @@ const Navbar = () => {
                 <NavLinks path='/admin' title='Admin' />
               }
               {isSession ? (
-                <button>Log Out</button>
+                <button className='btnPrimary'>Log Out</button>
               ) : (
-                <button>Log In</button>
+                <button className='btnPrimary'>Log In</button>
               )}
             </ul>
         )

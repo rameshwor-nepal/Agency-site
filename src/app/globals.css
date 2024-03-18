@@ -32,7 +32,7 @@ a{
     justify-content: space-between;
 }
 
-button{
+.btnPrimary{
     cursor: pointer;
     padding: 8px 12px;
     background-color: var(--btn);
@@ -43,7 +43,21 @@ button{
     border-radius: 5px;
 }
 
-button:hover{
+.btnPrimary:hover{
     background-color: var(--btnHover);
     transition: all ease-in-out;
+}
+
+.btnSecondary{
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: var(--textSoft);
+    color: var(--bg);
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.btnSecondary:hover{
+    background-color: #d4d4d4;
 }
