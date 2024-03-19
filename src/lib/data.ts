@@ -6,8 +6,7 @@ import { unstable_noStore as noStore } from "next/cache";
 export const getPosts = async () => {
   try {
     connectToDb();
-    const posts = await Post.find();
-    console.log("posts", posts)
+    const posts: DbPost[] = await Post.find();
     return posts;
   } catch (err) {
     console.log(err);
@@ -18,7 +17,7 @@ export const getPosts = async () => {
 export const getPost = async (slug: number | string) => {
   try {
     connectToDb();
-    const post = await Post.findOne({ slug });
+    const post: DbPost | null = await Post.findOne({ slug });
     return post;
   } catch (err) {
     console.log(err);
@@ -30,7 +29,7 @@ export const getUser = async (id: number | string) => {
   noStore();
   try {
     connectToDb();
-    const user = await User.findById(id);
+    const user : DbUser | null = await User.findById(id);
     return user;
   } catch (err) {
     console.log(err);
@@ -41,7 +40,7 @@ export const getUser = async (id: number | string) => {
 export const getUsers = async () => {
   try {
     connectToDb();
-    const users = await User.find();
+    const users: DbUser[] = await User.find();
     return users;
   } catch (err) {
     console.log(err);

@@ -28,3 +28,20 @@ interface GetPostUser{
         bs: string;
     }
 }
+
+interface DbUser{
+    username: string;
+    email: string | null;
+    password: string | null;
+    img: string | null;
+    isAdmin: boolean;
+}
+
+interface DbPost{
+    title: string;
+    img: string | null;
+    body: string;
+    userId: string | number;
+    slug: string | number;
+    created_on: string;
+}
