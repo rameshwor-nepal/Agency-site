@@ -1,9 +1,7 @@
-"use client"
+
 import React, { useState } from 'react'
-import Image from 'next/image'
-import styles from './navbar.module.css'
-import { usePathname } from 'next/navigation'
-import NavLinks from './navLinks'
+import Links from './Links'
+import { auth } from '@/lib/auth';
 
 const Menus = [
   {
@@ -27,54 +25,13 @@ const Menus = [
     path: '/contact'
   },
 ]
-const Navbar = () => {
-  const path = usePathname();
-  const [open, setOpen] = useState<boolean>(false);
+const Navbar = async() => {
 
-  const isSession = true;
-  const isAdmin = true;
+  const isSession = await auth();
   return (
+
     <section>
-      <div className={styles.container}>
-        <div>
-          <Image src={'/agencyLogo.png'} alt='logo' width={70} height={70}></Image>
-        </div>
-
-          <ul className={styles.linkContainer}>
-            {Menus.map((el, index) => (
-              <NavLinks key={index} path={el.path} title={el.name} />
-            ))}
-            {isAdmin &&
-              <NavLinks path='/admin' title='Admin' />
-            }
-          </ul>
-          <div className={styles.linkContainer}>
-            {isSession ? (
-              <button className='btnPrimary'>Log Out</button>
-            ) : (
-              <button className='btnPrimary'>Log In</button>
-            )}
-
-          </div>
-             
-      <button onClick={() =>setOpen(!open)} className={styles.menuButton}>Menu</button>
-        { open && (
-            <ul className={styles.mobileLinks}>
-              {Menus.map((el, index) => (
-                <NavLinks key={index} path={el.path} title={el.name} />
-              ))}
-              {isAdmin &&
-                <NavLinks path='/admin' title='Admin' />
-              }
-              {isSession ? (
-                <button className='btnPrimary'>Log Out</button>
-              ) : (
-                <button className='btnPrimary'>Log In</button>
-              )}
-            </ul>
-        )
-      }
-      </div>
+      <Links isSession = {isSession || null}/>
 
     </section>
   )

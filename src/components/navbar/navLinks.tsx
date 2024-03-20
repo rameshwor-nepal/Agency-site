@@ -1,7 +1,6 @@
 "use client"
 import Link from 'next/link'
 import React from 'react'
-import Image from 'next/image'
 import styles from './navbar.module.css'
 import { usePathname } from 'next/navigation'
 
